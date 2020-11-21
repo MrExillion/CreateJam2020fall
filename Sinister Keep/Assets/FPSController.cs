@@ -78,6 +78,18 @@ public class FPSController : MonoBehaviour
         {
             Debug.Log(hit.transform.GetComponent<PropProperties>().id);
 
+            if(hit.transform.GetComponent<PropProperties>().type == "Dialogue")
+            {
+                EventSystemManager.EventSystemManagerSingleton.InteractProp(hit.transform.GetComponent<PropProperties>().id);
+
+            }
+            if(hit.transform.GetComponent<PropProperties>().type == "Lever")
+            {
+                //Invoke LeverSwitch with ID
+                EventSystemManager.EventSystemManagerSingleton.LeverSwitch(hit.transform.GetComponent<PropProperties>().id, hit.transform.GetComponent<PropProperties>().value, hit.transform.GetComponent<PropProperties>().targetId, hit.transform.GetComponent<PropProperties>().inverseLink,hit.transform.gameObject);
+            }
+            
+
         }
 
     }

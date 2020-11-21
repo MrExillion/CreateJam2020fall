@@ -9,6 +9,9 @@ public class PropProperties : MonoBehaviour
     public string name;
     public bool value;
     public int counter;
+    public string type;
+    public int targetId;
+    public bool inverseLink;
 
 
 
