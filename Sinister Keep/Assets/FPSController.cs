@@ -76,7 +76,7 @@ public class FPSController : MonoBehaviour
 
         if(Physics.Raycast(Camera.transform.position, Camera.transform.forward, out hit, interactRange))
         {
-            //Debug.Log(hit.transform.GetComponent<PropProperties>().id);
+            Debug.Log(hit.transform.GetComponent<PropProperties>().id);
 
         }
 
