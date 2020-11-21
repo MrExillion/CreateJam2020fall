@@ -38,12 +38,12 @@ public class FPSController : MonoBehaviour
         //horizontalDelta = Mathf.Clamp(horizontalDelta,-90f,90f);
 
         //transform.localRotation = Quaternion.Euler(horizontalDelta, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseVec.x);
+        
 
         verticalDelta -= mouseVec.y;
         verticalDelta = Mathf.Clamp(verticalDelta, -90f, 90f);
 
-        Camera.transform.localRotation = Quaternion.Euler(verticalDelta,0f,0f);
+
 
         moveVec.x = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
         moveVec.z = Input.GetAxis("Vertical") * moveSpeed * Time.fixedDeltaTime;
@@ -51,7 +51,7 @@ public class FPSController : MonoBehaviour
 
         moveVec = moveVec.x * transform.right + moveVec.z * transform.forward;
         moveVec.y = rb.velocity.y;
-        rb.velocity = moveVec; 
+        //rb.velocity = moveVec; 
 
 
         if(Input.GetButtonDown("Jump") && Physics.CheckSphere(groundCheck.position, groundDistTolerance, groundMask))
@@ -62,13 +62,22 @@ public class FPSController : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (/*Input.GetMouseButtonDown(0) || Input.GetButtonDown("RB")*/ Input.GetButtonDown("Fire1"))
         {
             Interact();
         }
 
     }
 
+    private void FixedUpdate()
+    {
+        rb.velocity = moveVec;
+    }
+    private void LateUpdate()
+    {
+        playerBody.Rotate(Vector3.up * mouseVec.x);
+        Camera.transform.localRotation = Quaternion.Euler(verticalDelta, 0f, 0f);
+    }
 
     void Interact()
     {
@@ -83,12 +92,12 @@ public class FPSController : MonoBehaviour
                 EventSystemManager.EventSystemManagerSingleton.InteractProp(hit.transform.GetComponent<PropProperties>().id);
 
             }
-            if(hit.transform.GetComponent<PropProperties>().type == "Lever")
+            if(hit.transform.GetComponent<PropProperties>().type == "Lever" || hit.transform.GetComponent<PropProperties>().type == "FloorLever")
             {
                 //Invoke LeverSwitch with ID
                 EventSystemManager.EventSystemManagerSingleton.LeverSwitch(hit.transform.GetComponent<PropProperties>().id, hit.transform.GetComponent<PropProperties>().value, hit.transform.GetComponent<PropProperties>().targetId, hit.transform.GetComponent<PropProperties>().inverseLink,hit.transform.gameObject);
             }
-            if(hit.transform.GetComponent<PropProperties>().type == "LetterSwitch")
+            if(hit.transform.GetComponent<PropProperties>().type == "LetterSwitch" && hit.transform.GetComponent<PropProperties>().value)
             {
                 EventSystemManager.EventSystemManagerSingleton.LetterSwitch(hit.transform.GetComponent<PropProperties>().id, hit.transform.GetComponent<PropProperties>().value, hit.transform.GetComponent<PropProperties>().targetId, hit.transform.GetComponent<PropProperties>().inverseLink, hit.transform.gameObject);
             }

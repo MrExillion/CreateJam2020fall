@@ -35,15 +35,29 @@ public class LeverController : MonoBehaviour
 
     private void Update()
     {
-
-        if (gameObject.GetComponent<PropProperties>().value)
+        if (gameObject.GetComponent<PropProperties>().type == "FloorLever")
         {
-            leverHandle.transform.localRotation = Quaternion.Euler(-45, -270f, 0f);
+            if (gameObject.GetComponent<PropProperties>().value)
+            {
+                leverHandle.transform.localRotation = Quaternion.Euler(-170f, 90f, 0f);
 
+            }
+            else
+            {
+                leverHandle.transform.localRotation = Quaternion.Euler(-10f, 90f, 0f);
+            }
         }
         else
         {
-            leverHandle.transform.localRotation = Quaternion.Euler(45, -270f, 0f);
+            if (gameObject.GetComponent<PropProperties>().value)
+            {
+                leverHandle.transform.localRotation = Quaternion.Euler(-45, -270f, 0f);
+
+            }
+            else
+            {
+                leverHandle.transform.localRotation = Quaternion.Euler(45, -270f, 0f);
+            }
         }
 
             //Debug.Log(id + " - " + gameObject.GetComponent<PropProperties>().value);
