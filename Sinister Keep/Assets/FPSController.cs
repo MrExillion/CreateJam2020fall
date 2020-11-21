@@ -88,7 +88,10 @@ public class FPSController : MonoBehaviour
                 //Invoke LeverSwitch with ID
                 EventSystemManager.EventSystemManagerSingleton.LeverSwitch(hit.transform.GetComponent<PropProperties>().id, hit.transform.GetComponent<PropProperties>().value, hit.transform.GetComponent<PropProperties>().targetId, hit.transform.GetComponent<PropProperties>().inverseLink,hit.transform.gameObject);
             }
-            
+            if(hit.transform.GetComponent<PropProperties>().type == "LetterSwitch")
+            {
+                EventSystemManager.EventSystemManagerSingleton.LetterSwitch(hit.transform.GetComponent<PropProperties>().id, hit.transform.GetComponent<PropProperties>().value, hit.transform.GetComponent<PropProperties>().targetId, hit.transform.GetComponent<PropProperties>().inverseLink, hit.transform.gameObject);
+            }
 
         }
 

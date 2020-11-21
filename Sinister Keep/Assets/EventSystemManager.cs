@@ -42,6 +42,16 @@ public class EventSystemManager : MonoBehaviour
 
     }
 
+    public event Action<int, bool, int, bool, GameObject> onLetterSwitch;
+    public void LetterSwitch(int id, bool state, int targetId, bool inverseLink, GameObject go)
+    {
+        if (onLetterSwitch != null)
+        {
+            onLetterSwitch(id, state, targetId, inverseLink, go);
+        }
+
+    }
+
 
 
 }
