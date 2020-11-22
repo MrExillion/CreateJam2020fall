@@ -4077,6 +4077,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3638079273899574363, guid: 1e0e11e043c0d424cb0a1383b442a692,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.42
+      objectReference: {fileID: 0}
     - target: {fileID: 3638079275523188515, guid: 1e0e11e043c0d424cb0a1383b442a692,
         type: 3}
       propertyPath: cdGain.x
