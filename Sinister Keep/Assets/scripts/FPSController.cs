@@ -109,6 +109,10 @@ public class FPSController : MonoBehaviour
                     {
                         //complete puzzle
                         Debug.Log("PuzzleComplete");
+                        puzzle1Logic.singleton.puzzle1Complete = true;
+                        iterator = 0;
+                        sequenceActive = false;
+
                     }
                 }
                 else
@@ -117,6 +121,7 @@ public class FPSController : MonoBehaviour
                     for(int i=0;i < defaultValues.Length; i++)
                     {
                         leverArr[i].transform.GetComponent<PropProperties>().value = defaultValues[i];
+                        EventSystemManager.EventSystemManagerSingleton.LeverSwitch(leverArr[i].transform.GetComponent<PropProperties>().id, leverArr[i].transform.GetComponent<PropProperties>().value, leverArr[i].transform.GetComponent<PropProperties>().targetId, leverArr[i].transform.GetComponent<PropProperties>().inverseLink, leverArr[i].transform.GetComponent<PropProperties>().gameObject);
                     }
 
                 }

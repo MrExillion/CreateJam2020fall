@@ -32,6 +32,20 @@ public class EventSystemManager : MonoBehaviour
 
     }
 
+    public event Action<int> onPuzzleComplete;
+    public void PuzzleComplete(int id)
+    {
+        if (onPuzzleComplete != null)
+        {
+            onPuzzleComplete(id);
+        }
+
+    }
+
+
+
+
+
     public event Action<int,bool,int,bool,GameObject> onLeverSwitch;
     public void LeverSwitch(int id,bool state,int targetId,bool inverseLink, GameObject go)
     {
