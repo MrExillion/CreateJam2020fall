@@ -79,6 +79,11 @@ public class FPSController : MonoBehaviour
         Camera.transform.localRotation = Quaternion.Euler(verticalDelta, 0f, 0f);
     }
 
+    int iterator = 0;
+    public int[] sequence = new int[10];
+    public bool[] defaultValues = new bool[10];
+    public GameObject[] leverArr = new GameObject[10];
+    public bool sequenceActive = false;
     void Interact()
     {
         RaycastHit hit;
@@ -96,6 +101,27 @@ public class FPSController : MonoBehaviour
             {
                 //Invoke LeverSwitch with ID
                 EventSystemManager.EventSystemManagerSingleton.LeverSwitch(hit.transform.GetComponent<PropProperties>().id, hit.transform.GetComponent<PropProperties>().value, hit.transform.GetComponent<PropProperties>().targetId, hit.transform.GetComponent<PropProperties>().inverseLink,hit.transform.gameObject);
+
+                if(sequence[iterator] == hit.transform.GetComponent<PropProperties>().id && sequenceActive)
+                {
+                    iterator++;
+                    if(sequence.Length == iterator)
+                    {
+                        //complete puzzle
+                        Debug.Log("PuzzleComplete");
+                    }
+                }
+                else
+                {
+                    // reset the puzzle here
+                    for(int i=0;i < defaultValues.Length; i++)
+                    {
+                        leverArr[i].transform.GetComponent<PropProperties>().value = defaultValues[i];
+                    }
+
+                }
+
+
             }
             if(hit.transform.GetComponent<PropProperties>().type == "LetterSwitch" && hit.transform.GetComponent<PropProperties>().value)
             {

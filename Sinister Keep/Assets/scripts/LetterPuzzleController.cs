@@ -32,18 +32,28 @@ public class LetterPuzzleController : MonoBehaviour
 
     }
 
-
+    public MeshRenderer[] bookPieces = new MeshRenderer[3];
     private void Update()
     {
-
+        bookPieces = letterGraphics.GetComponentsInChildren<MeshRenderer>();
         if (gameObject.GetComponent<PropProperties>().value)
         {
-            letterGraphics.GetComponent<MeshRenderer>().enabled = true;
+            
+            for (int i = 0; i < bookPieces.Length; i++)
+            {
+                //letterGraphics.GetComponentInChildren<MeshRenderer>().enabled = true;
+
+                bookPieces[i].enabled = true;
+            }
 
         }
         else
         {
-            letterGraphics.GetComponent<MeshRenderer>().enabled = false;
+            for (int i = 0; i < bookPieces.Length; i++)
+            {
+                //letterGraphics.GetComponentInChildren<MeshRenderer>().enabled = false;
+                bookPieces[i].enabled = false;
+            }
         }
 
         //Debug.Log(id + " - " + gameObject.GetComponent<PropProperties>().value);
