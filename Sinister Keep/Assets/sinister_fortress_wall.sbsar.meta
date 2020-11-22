@@ -1,0 +1,604 @@
+fileFormatVersion: 2
+guid: 42c64d94997c434478d1d52bf9429401
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
+  version: 29
+  projectContext: 0
+  mGraphInstanceData:
+  - graphLabel: Sinister Fortress Wall
+    prototypeName: Sinister Fortress Wall
+    graphDescIndex: 0
+    generateAllOutputs: 1
+    generateMipMaps: 1
+    preset: " <sbspreset pkgurl=\"pkg://sinister_fortress_wall\" label=\"\" >\n 
+      <presetinput identifier=\"$outputsize\" uid=\"673178400\" type=\"8\" value=\"9,9\"
+      />\n  <presetinput identifier=\"$randomseed\" uid=\"2137912690\" type=\"4\"
+      value=\"2713\" />\n  <presetinput identifier=\"bricks_and_plaster_roughness\"
+      uid=\"1131509158\" type=\"0\" value=\"0.528\" />\n  <presetinput identifier=\"metal_roughness\"
+      uid=\"1131511340\" type=\"0\" value=\"0.884\" />\n  <presetinput identifier=\"bricks_x_amount\"
+      uid=\"1132403992\" type=\"4\" value=\"10\" />\n  <presetinput identifier=\"bricks_y_amount\"
+      uid=\"1132399533\" type=\"4\" value=\"21\" />\n  <presetinput identifier=\"age\"
+      uid=\"1132439552\" type=\"0\" value=\"0.009\" />\n  <presetinput identifier=\"elements\"
+      uid=\"1132372759\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_diffuse\"
+      uid=\"1523907518\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_specular\"
+      uid=\"1523907457\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_glossiness\"
+      uid=\"1523907456\" type=\"4\" value=\"1\" />\n </sbspreset>\n"
+    shaderName: Standard
+    materialProperties:
+      shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+      shaderKeywords: _GLOSSINESSMAP _MAINTEX _METALLICGLOSSMAP _NA_DIFFUSE _NORMALMAP
+        _OCCLUSIONMAP _PARALLAXMAP _ROUGHNESSMAP _SPECGLOSSMAP
+      lightmapFlags: 4
+      enableInstancingVariants: 0
+      doubleSidedGI: 0
+      customRenderQueue: -1
+      texEnvs:
+      - name: _BumpMap
+        texture: {fileID: 3067021844952827476, guid: 42c64d94997c434478d1d52bf9429401,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _DetailAlbedoMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _DetailMask
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _DetailNormalMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _EmissionMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _MainTex
+        texture: {fileID: -5891756013524412479, guid: 42c64d94997c434478d1d52bf9429401,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _MetallicGlossMap
+        texture: {fileID: -7718230530709483073, guid: 42c64d94997c434478d1d52bf9429401,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _OcclusionMap
+        texture: {fileID: -6803598296396776473, guid: 42c64d94997c434478d1d52bf9429401,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _ParallaxMap
+        texture: {fileID: -2031750893482427142, guid: 42c64d94997c434478d1d52bf9429401,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      floats:
+      - name: _BumpScale
+        float: 1
+      - name: _Cutoff
+        float: 0.5
+      - name: _DetailNormalMapScale
+        float: 1
+      - name: _DstBlend
+        float: 0
+      - name: _GlossMapScale
+        float: 1
+      - name: _Glossiness
+        float: 0.5
+      - name: _GlossyReflections
+        float: 1
+      - name: _Metallic
+        float: 0
+      - name: _Mode
+        float: 0
+      - name: _OcclusionStrength
+        float: 1
+      - name: _Parallax
+        float: 0.02
+      - name: _SmoothnessTextureChannel
+        float: 0
+      - name: _SpecularHighlights
+        float: 1
+      - name: _SrcBlend
+        float: 1
+      - name: _UVSec
+        float: 0
+      - name: _ZWrite
+        float: 1
+      colors:
+      - name: _Color
+        color: {r: 1, g: 1, b: 1, a: 1}
+      - name: _EmissionColor
+        color: {r: 0, g: 0, b: 0, a: 1}
+    outputDescList:
+    - outputName: diffuse
+      identifier: diffuse
+      usageName: diffuse
+      channelStr: diffuse
+      label: Diffuse
+      usage: 0
+      bImage: 1
+      bNumerical: 0
+      bLinear: 0
+    - outputName: baseColor
+      identifier: basecolor
+      usageName: baseColor
+      channelStr: baseColor
+      label: Base Color
+      usage: 1
+      bImage: 1
+      bNumerical: 0
+      bLinear: 0
+    - outputName: normal
+      identifier: normal
+      usageName: normal
+      channelStr: normal
+      label: Normal
+      usage: 7
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: specular
+      identifier: specular
+      usageName: specular
+      channelStr: specular
+      label: Specular
+      usage: 11
+      bImage: 1
+      bNumerical: 0
+      bLinear: 0
+    - outputName: glossiness
+      identifier: glossiness
+      usageName: glossiness
+      channelStr: glossiness
+      label: Glossiness
+      usage: 14
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: roughness
+      identifier: roughness
+      usageName: roughness
+      channelStr: roughness
+      label: Roughness
+      usage: 15
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: metallic
+      identifier: metallic
+      usageName: metallic
+      channelStr: metallic
+      label: Metallic
+      usage: 34
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: height
+      identifier: height
+      usageName: height
+      channelStr: height
+      label: Height
+      usage: 9
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: ambientOcclusion
+      identifier: ambientocclusion
+      usageName: ambientOcclusion
+      channelStr: ambientOcclusion
+      label: Ambient Occlusion
+      usage: 5
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    texturePackingList:
+    - targetName: diffuse
+      components:
+      - sourceName: diffuse
+        from: 0
+        to: 3
+    - targetName: baseColor
+      components:
+      - sourceName: baseColor
+        from: 0
+        to: 3
+    - targetName: normal
+      components:
+      - sourceName: normal
+        from: 0
+        to: 3
+    - targetName: specular
+      components:
+      - sourceName: specular
+        from: 0
+        to: 3
+    - targetName: glossiness
+      components:
+      - sourceName: glossiness
+        from: 0
+        to: 3
+    - targetName: roughness
+      components:
+      - sourceName: roughness
+        from: 0
+        to: 3
+    - targetName: metallic
+      components:
+      - sourceName: smoothness
+        from: 0
+        to: 3
+    - targetName: height
+      components:
+      - sourceName: height
+        from: 0
+        to: 3
+    - targetName: ambientOcclusion
+      components:
+      - sourceName: ambientOcclusion
+        from: 0
+        to: 3
+    textureParameters:
+    - textureName: Sinister Fortress Wall - diffuse
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall - baseColor
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall - normal
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall - specular
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall - glossiness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall - roughness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall - metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall - height
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall - ambientOcclusion
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    colorSpaceList: []
+    inputTextureMap: []
+    targetSettingList:
+    - label: Default
+      bOverride: 0
+      bLockRatio: 1
+      textureWidth: 512
+      textureHeight: 512
+      textureFormatMode: 0
+      normalCompressed: 0
+      bGenerateOnLoad: 1
+    material: {fileID: -1789747915668970116, guid: 42c64d94997c434478d1d52bf9429401,
+      type: 3}
+    generatedTextures:
+    - {fileID: -6071914252172617028, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: -5891756013524412479, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: 3067021844952827476, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: -2920201064624522982, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: 3694212959280314935, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: 4125306675011640781, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: -7718230530709483073, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: -2031750893482427142, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: -6803598296396776473, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+  - graphLabel: Sinister Fortress Wall_1
+    prototypeName: Sinister Fortress Wall
+    graphDescIndex: 0
+    generateAllOutputs: 1
+    generateMipMaps: 1
+    preset: " <sbspreset pkgurl=\"pkg://sinister_fortress_wall\" label=\"\" >\n 
+      <presetinput identifier=\"$outputsize\" uid=\"673178400\" type=\"8\" value=\"9,9\"
+      />\n  <presetinput identifier=\"$randomseed\" uid=\"2137912690\" type=\"4\"
+      value=\"2713\" />\n  <presetinput identifier=\"bricks_and_plaster_roughness\"
+      uid=\"1131509158\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"bricks_x_amount\"
+      uid=\"1132403992\" type=\"4\" value=\"27\" />\n  <presetinput identifier=\"elements\"
+      uid=\"1132372759\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_diffuse\"
+      uid=\"1523907518\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_specular\"
+      uid=\"1523907457\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_glossiness\"
+      uid=\"1523907456\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"normal_intensity\"
+      uid=\"759342586\" type=\"0\" value=\"0.568\" />\n  <presetinput identifier=\"height_range\"
+      uid=\"1432529371\" type=\"0\" value=\"0.607\" />\n  <presetinput identifier=\"height_position\"
+      uid=\"1432529322\" type=\"0\" value=\"0.59\" />\n  <presetinput identifier=\"ambientocclusion_intensity\"
+      uid=\"1597093200\" type=\"0\" value=\"0.596\" />\n </sbspreset>\n"
+    shaderName: Standard
+    materialProperties:
+      shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+      shaderKeywords: _GLOSSINESSMAP _MAINTEX _METALLICGLOSSMAP _NA_DIFFUSE _NORMALMAP
+        _OCCLUSIONMAP _PARALLAXMAP _ROUGHNESSMAP _SPECGLOSSMAP
+      lightmapFlags: 4
+      enableInstancingVariants: 0
+      doubleSidedGI: 0
+      customRenderQueue: -1
+      texEnvs:
+      - name: _BumpMap
+        texture: {fileID: -4851592048738049003, guid: 42c64d94997c434478d1d52bf9429401,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _DetailAlbedoMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _DetailMask
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _DetailNormalMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _EmissionMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _MainTex
+        texture: {fileID: 8118330478738871122, guid: 42c64d94997c434478d1d52bf9429401,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _MetallicGlossMap
+        texture: {fileID: -4726294783696438230, guid: 42c64d94997c434478d1d52bf9429401,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _OcclusionMap
+        texture: {fileID: 2535442841776125307, guid: 42c64d94997c434478d1d52bf9429401,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _ParallaxMap
+        texture: {fileID: -2781689756297399809, guid: 42c64d94997c434478d1d52bf9429401,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      floats:
+      - name: _BumpScale
+        float: 1
+      - name: _Cutoff
+        float: 0.5
+      - name: _DetailNormalMapScale
+        float: 1
+      - name: _DstBlend
+        float: 0
+      - name: _GlossMapScale
+        float: 1
+      - name: _Glossiness
+        float: 0.5
+      - name: _GlossyReflections
+        float: 1
+      - name: _Metallic
+        float: 0
+      - name: _Mode
+        float: 0
+      - name: _OcclusionStrength
+        float: 1
+      - name: _Parallax
+        float: 0.02
+      - name: _SmoothnessTextureChannel
+        float: 0
+      - name: _SpecularHighlights
+        float: 1
+      - name: _SrcBlend
+        float: 1
+      - name: _UVSec
+        float: 0
+      - name: _ZWrite
+        float: 1
+      colors:
+      - name: _Color
+        color: {r: 1, g: 1, b: 1, a: 1}
+      - name: _EmissionColor
+        color: {r: 0, g: 0, b: 0, a: 1}
+    outputDescList:
+    - outputName: diffuse
+      identifier: diffuse
+      usageName: diffuse
+      channelStr: diffuse
+      label: Diffuse
+      usage: 0
+      bImage: 1
+      bNumerical: 0
+      bLinear: 0
+    - outputName: baseColor
+      identifier: basecolor
+      usageName: baseColor
+      channelStr: baseColor
+      label: Base Color
+      usage: 1
+      bImage: 1
+      bNumerical: 0
+      bLinear: 0
+    - outputName: normal
+      identifier: normal
+      usageName: normal
+      channelStr: normal
+      label: Normal
+      usage: 7
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: specular
+      identifier: specular
+      usageName: specular
+      channelStr: specular
+      label: Specular
+      usage: 11
+      bImage: 1
+      bNumerical: 0
+      bLinear: 0
+    - outputName: glossiness
+      identifier: glossiness
+      usageName: glossiness
+      channelStr: glossiness
+      label: Glossiness
+      usage: 14
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: roughness
+      identifier: roughness
+      usageName: roughness
+      channelStr: roughness
+      label: Roughness
+      usage: 15
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: metallic
+      identifier: metallic
+      usageName: metallic
+      channelStr: metallic
+      label: Metallic
+      usage: 34
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: height
+      identifier: height
+      usageName: height
+      channelStr: height
+      label: Height
+      usage: 9
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: ambientOcclusion
+      identifier: ambientocclusion
+      usageName: ambientOcclusion
+      channelStr: ambientOcclusion
+      label: Ambient Occlusion
+      usage: 5
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    texturePackingList:
+    - targetName: diffuse
+      components:
+      - sourceName: diffuse
+        from: 0
+        to: 3
+    - targetName: baseColor
+      components:
+      - sourceName: baseColor
+        from: 0
+        to: 3
+    - targetName: normal
+      components:
+      - sourceName: normal
+        from: 0
+        to: 3
+    - targetName: specular
+      components:
+      - sourceName: specular
+        from: 0
+        to: 3
+    - targetName: glossiness
+      components:
+      - sourceName: glossiness
+        from: 0
+        to: 3
+    - targetName: roughness
+      components:
+      - sourceName: roughness
+        from: 0
+        to: 3
+    - targetName: metallic
+      components:
+      - sourceName: smoothness
+        from: 0
+        to: 3
+    - targetName: height
+      components:
+      - sourceName: height
+        from: 0
+        to: 3
+    - targetName: ambientOcclusion
+      components:
+      - sourceName: ambientOcclusion
+        from: 0
+        to: 3
+    textureParameters:
+    - textureName: Sinister Fortress Wall_1 - diffuse
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall_1 - baseColor
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall_1 - normal
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall_1 - specular
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall_1 - glossiness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall_1 - roughness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall_1 - metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall_1 - height
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Sinister Fortress Wall_1 - ambientOcclusion
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    colorSpaceList: []
+    inputTextureMap: []
+    targetSettingList:
+    - label: Default
+      bOverride: 0
+      bLockRatio: 1
+      textureWidth: 512
+      textureHeight: 512
+      textureFormatMode: 0
+      normalCompressed: 0
+      bGenerateOnLoad: 1
+    material: {fileID: 7220361657298251283, guid: 42c64d94997c434478d1d52bf9429401,
+      type: 3}
+    generatedTextures:
+    - {fileID: -2079687392243465556, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: 8118330478738871122, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: -4851592048738049003, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: -1287229934247419310, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: 638165116080920550, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: -2837292720705178557, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: -4726294783696438230, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: -2781689756297399809, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
+    - {fileID: 2535442841776125307, guid: 42c64d94997c434478d1d52bf9429401, type: 3}
