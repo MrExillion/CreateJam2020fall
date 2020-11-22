@@ -9,6 +9,7 @@ public class EndTrigger : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(3);
+        Cursor.lockState = CursorLockMode.None;
     }
 }

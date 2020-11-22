@@ -122,8 +122,9 @@ public class FPSController : MonoBehaviour
                     {
                         leverArr[i].transform.GetComponent<PropProperties>().value = defaultValues[i];
                         EventSystemManager.EventSystemManagerSingleton.LeverSwitch(leverArr[i].transform.GetComponent<PropProperties>().id, leverArr[i].transform.GetComponent<PropProperties>().value, leverArr[i].transform.GetComponent<PropProperties>().targetId, leverArr[i].transform.GetComponent<PropProperties>().inverseLink, leverArr[i].transform.GetComponent<PropProperties>().gameObject);
+                        
                     }
-
+                    iterator = 0;
                 }
 
 
