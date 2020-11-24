@@ -39,24 +39,34 @@ public class Puzzle2Logic : MonoBehaviour
         //endDoorPuzzle1.transform.localPosition.Set(0.17f, 1.07f, 5f);
         //gameObject.SetActive(true);
         //do something with id
-
-        if (puzzleObjects[0].GetComponent<PropProperties>().value)
+        if (id == puzzle1Logic.singleton.puzzle1DoorId)
         {
-            if (puzzleObjects[1].GetComponent<PropProperties>().value)
+            return;
+        }
+        else
+        {
+            if (puzzleObjects[0].GetComponent<PropProperties>().value)
             {
-                if (puzzleObjects[2].GetComponent<PropProperties>().value)
+                if (puzzleObjects[1].GetComponent<PropProperties>().value)
                 {
-                    if (!puzzleObjects[3].GetComponent<PropProperties>().value)
+                    if (puzzleObjects[2].GetComponent<PropProperties>().value)
                     {
-                        puzzle2Complete = true;
+                        if (!puzzleObjects[3].GetComponent<PropProperties>().value)
+                        {
+                            puzzle2Complete = true;
+
+                        }
+                        else
+                        {
+                            ResetPuzzle();
+                        }
+
 
                     }
                     else
                     {
                         ResetPuzzle();
                     }
-
-
                 }
                 else
                 {
@@ -68,11 +78,6 @@ public class Puzzle2Logic : MonoBehaviour
                 ResetPuzzle();
             }
         }
-        else
-        {
-            ResetPuzzle();
-        }
-
 
         if (id == gameObject.GetComponent<PropProperties>().id && puzzle2Complete)
         {
