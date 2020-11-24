@@ -11,8 +11,12 @@ public class PropProperties : MonoBehaviour
     public int counter;
     public string type;
     public int targetId;
+    public int targetId2;
     public bool inverseLink;
-
+    public bool linked;
+    public AudioSource interactSound;
+    public string dialogueMessage;
+    public GameObject linkedGameObject;
 
 
 }

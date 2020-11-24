@@ -22,12 +22,12 @@ public class EventSystemManager : MonoBehaviour
     }
 
 
-    public event Action<int> onInteractProp;
-    public void InteractProp(int id)
+    public event Action<int,string> onInteractProp;
+    public void InteractProp(int id, string message)
     {
         if(onInteractProp != null)
         {
-            onInteractProp(id);
+            onInteractProp(id,message);
         }
 
     }
@@ -66,6 +66,16 @@ public class EventSystemManager : MonoBehaviour
 
     }
 
+
+    public event Action<GameObject> onSoundTrigger;
+    public void SoundTrigger(GameObject go)
+    {
+        if (onSoundTrigger != null)
+        {
+            onSoundTrigger(go);
+        }
+
+    }
 
 
 }

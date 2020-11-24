@@ -6,6 +6,7 @@ public class puzzle1Logic : MonoBehaviour
 {
     public static puzzle1Logic singleton;
     public GameObject endDoorPuzzle1;
+    private bool playOnce = false;
 
     public bool puzzle1Complete = false;
     public int puzzle1DoorId;
@@ -28,6 +29,7 @@ public class puzzle1Logic : MonoBehaviour
     void Start()
     {
         EventSystemManager.EventSystemManagerSingleton.onPuzzleComplete += OnPuzzleComplete;
+        playOnce = true;
     }
 
     private void OnPuzzleComplete(int id)
@@ -56,6 +58,13 @@ public class puzzle1Logic : MonoBehaviour
             EventSystemManager.EventSystemManagerSingleton.PuzzleComplete(puzzle1DoorId);
             endDoorPuzzle1.transform.localPosition = new Vector3(0.17f, 1.07f, 5f);
             //endDoorPuzzle1.transform.position = new Vector3(0.17f, 1.07f, 5f);
+
+            if (playOnce && !gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                gameObject.GetComponent<AudioSource>().Play();
+                playOnce = false;
+            }
+
         }
 
     }

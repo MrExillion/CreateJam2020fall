@@ -22,6 +22,8 @@ public class FPSController : MonoBehaviour
     public LayerMask groundMask;
     public float interactRange;
 
+    public AudioSource walkSound;
+
     private void Start()
     {
         Cursor.lockState  = CursorLockMode.Locked;
@@ -49,12 +51,21 @@ public class FPSController : MonoBehaviour
         moveVec.z = Input.GetAxis("Vertical") * moveSpeed * Time.fixedDeltaTime;
         //moveVec.y =  rb.velocity.y;//Input.GetAxis("Jump");
 
+
+
         moveVec = moveVec.x * transform.right + moveVec.z * transform.forward;
         moveVec.y = rb.velocity.y;
         //rb.velocity = moveVec; 
+        if ((moveVec.x != 0f || moveVec.y != 0f || moveVec.z != 0f) && Physics.CheckSphere(groundCheck.position, groundDistTolerance, groundMask) && !walkSound.isPlaying)
+        {
+            walkSound.Play();
+        }
+        else if (walkSound.isPlaying && (moveVec.x == 0f && moveVec.z == 0f) || !Physics.CheckSphere(groundCheck.position, groundDistTolerance, groundMask))
+        {
+            walkSound.Stop();
+        }
 
-
-        if(Input.GetButtonDown("Jump") && Physics.CheckSphere(groundCheck.position, groundDistTolerance, groundMask))
+        if (Input.GetButtonDown("Jump") && Physics.CheckSphere(groundCheck.position, groundDistTolerance, groundMask))
         {
             Debug.Log("JUMP!");
             jumpforceVec = jumpforce * new Vector3(moveVec.x, 1f, moveVec.z);
@@ -94,7 +105,7 @@ public class FPSController : MonoBehaviour
 
             if(hit.transform.GetComponent<PropProperties>().type == "Dialogue")
             {
-                EventSystemManager.EventSystemManagerSingleton.InteractProp(hit.transform.GetComponent<PropProperties>().id);
+                EventSystemManager.EventSystemManagerSingleton.InteractProp(hit.transform.GetComponent<PropProperties>().id, hit.transform.GetComponent<PropProperties>().dialogueMessage);
 
             }
             if(hit.transform.GetComponent<PropProperties>().type == "Lever" || hit.transform.GetComponent<PropProperties>().type == "FloorLever")

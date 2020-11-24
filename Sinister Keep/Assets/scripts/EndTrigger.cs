@@ -7,6 +7,12 @@ public class EndTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
 
+
+    private void Start()
+    {
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+    }
+
     void OnTriggerEnter()
     {
         SceneManager.LoadScene(3);

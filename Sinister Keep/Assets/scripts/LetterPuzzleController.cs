@@ -22,10 +22,18 @@ public class LetterPuzzleController : MonoBehaviour
         //do something with id
         if (id == this.id)
         {
+            if (gameObject.GetComponent<PropProperties>().interactSound != null)
+            {
+                gameObject.GetComponent<PropProperties>().interactSound.Play();
+            }
             go.GetComponent<PropProperties>().value = !state;
         }
         if (targetId == this.id)
         {
+            if (gameObject.GetComponent<PropProperties>().interactSound != null)
+            {
+                gameObject.GetComponent<PropProperties>().interactSound.Play();
+            }
             gameObject.GetComponent<PropProperties>().value = (inverseLink == state);
 
         }
