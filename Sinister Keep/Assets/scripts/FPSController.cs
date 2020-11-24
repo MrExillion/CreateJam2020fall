@@ -144,7 +144,11 @@ public class FPSController : MonoBehaviour
             {
                 EventSystemManager.EventSystemManagerSingleton.LetterSwitch(hit.transform.GetComponent<PropProperties>().id, hit.transform.GetComponent<PropProperties>().value, hit.transform.GetComponent<PropProperties>().targetId, hit.transform.GetComponent<PropProperties>().inverseLink, hit.transform.gameObject);
             }
+            if(hit.transform.GetComponent<PropProperties>().dialogueMessage == "SubmitSolution")
+            {
+                EventSystemManager.EventSystemManagerSingleton.PuzzleComplete(hit.transform.GetComponent<PropProperties>().targetId);
 
+            }
         }
 
     }
