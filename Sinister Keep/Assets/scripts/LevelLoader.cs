@@ -11,7 +11,7 @@ public class LevelLoader : MonoBehaviour
     public Text progressText;
     // Start is called before the first frame update
     public void LoadLevel(int sceneIndex)
-    {;
+    {
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 
@@ -26,7 +26,7 @@ public class LevelLoader : MonoBehaviour
             float progress = Mathf.Clamp01(operation.progress / .9f);
             slider.value = progress;
             progressText.text = progress * 100f + "%";
-
+            //Debug.Log(operation.progress * 100f);
             yield return null;
         }
     }
