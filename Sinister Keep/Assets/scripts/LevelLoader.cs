@@ -9,7 +9,7 @@ public class LevelLoader : MonoBehaviour
     public GameObject loadingScreen;
     public Slider slider;
     public Text progressText;
-    // Start is called before the first frame update
+    
     public void LoadLevel(int sceneIndex)
     {
         StartCoroutine(LoadAsynchronously(sceneIndex));

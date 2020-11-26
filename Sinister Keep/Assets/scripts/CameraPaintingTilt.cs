@@ -17,7 +17,7 @@ public class CameraPaintingTilt : MonoBehaviour
         if (Puzzle2Logic.singleton.puzzleObjects[4].GetComponent<PropProperties>().value)
         {
             gameObject.transform.localRotation = Quaternion.Euler(0f,90f,-205f);
-            Debug.Log("default");
+//            Debug.Log("default");
         }
         else
         {

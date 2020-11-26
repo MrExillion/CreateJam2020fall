@@ -22,11 +22,24 @@ public class FPSController : MonoBehaviour
     public LayerMask groundMask;
     public float interactRange;
 
+    private Vector3 nonCrouchHeight;
+    private Vector3 crouchHeight;
+
+    public GameObject personalTorch;
+    private Quaternion personalTorchRotationNoCrouch;
+    private Quaternion personalTorchRotationCrouching;
+    
+
+
     public AudioSource walkSound;
 
     private void Start()
     {
         Cursor.lockState  = CursorLockMode.Locked;
+        nonCrouchHeight = Camera.transform.localPosition;
+        crouchHeight = new Vector3(nonCrouchHeight.x, nonCrouchHeight.y - 0.5f, nonCrouchHeight.z);
+        personalTorchRotationNoCrouch = personalTorch.transform.localRotation;
+        personalTorchRotationCrouching = Quaternion.Euler(0f, 0f, -90f);
     }
 
 
@@ -65,6 +78,32 @@ public class FPSController : MonoBehaviour
             walkSound.Stop();
         }
 
+
+
+        if (/*Input.GetMouseButtonDown(0) || Input.GetButtonDown("RB")*/ Input.GetButtonDown("Fire1"))
+        {
+            Interact();
+        }
+        
+        if (Input.GetButton("RB"))
+        {
+            Debug.Log("crouching");
+            Camera.transform.localPosition = crouchHeight;
+            personalTorch.transform.localRotation = personalTorchRotationCrouching;
+        }
+        else if (Input.GetButtonUp("RB"))
+        {
+            Debug.Log("NotCrouching");
+            Camera.transform.localPosition = nonCrouchHeight;
+            personalTorch.transform.localRotation = personalTorchRotationNoCrouch;
+        }
+
+
+
+    }
+
+    private void FixedUpdate()
+    {
         if (Input.GetButtonDown("Jump") && Physics.CheckSphere(groundCheck.position, groundDistTolerance, groundMask))
         {
             Debug.Log("JUMP!");
@@ -72,16 +111,6 @@ public class FPSController : MonoBehaviour
             rb.AddForce(jumpforceVec);
 
         }
-
-        if (/*Input.GetMouseButtonDown(0) || Input.GetButtonDown("RB")*/ Input.GetButtonDown("Fire1"))
-        {
-            Interact();
-        }
-
-    }
-
-    private void FixedUpdate()
-    {
         rb.velocity = moveVec;
     }
     private void LateUpdate()
@@ -101,7 +130,7 @@ public class FPSController : MonoBehaviour
 
         if(Physics.Raycast(Camera.transform.position, Camera.transform.forward, out hit, interactRange))
         {
-            Debug.Log(hit.transform.GetComponent<PropProperties>().id);
+//            Debug.Log(hit.transform.GetComponent<PropProperties>().id);
 
             if(hit.transform.GetComponent<PropProperties>().type == "Dialogue")
             {
@@ -119,7 +148,7 @@ public class FPSController : MonoBehaviour
                     if(sequence.Length == iterator)
                     {
                         //complete puzzle
-                        Debug.Log("PuzzleComplete");
+                        //Debug.Log("PuzzleComplete");
                         puzzle1Logic.singleton.puzzle1Complete = true;
                         iterator = 0;
                         sequenceActive = false;

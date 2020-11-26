@@ -4290,6 +4290,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbb599be2b03fdf4fab8a53f3b6a6506, type: 3}
+--- !u!1 &997102325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3024751966921255791, guid: 1e0e11e043c0d424cb0a1383b442a692,
+    type: 3}
+  m_PrefabInstance: {fileID: 3638079275404102230}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &998052033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5919,7 +5925,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 2
 --- !u!4 &1314312544
 Transform:
@@ -8607,7 +8613,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1830204262}
   - component: {fileID: 1830204261}
-  - component: {fileID: 1830204260}
   m_Layer: 0
   m_Name: Camera (3)
   m_TagString: Untagged
@@ -8615,14 +8620,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1830204260
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830204259}
-  m_Enabled: 1
 --- !u!20 &1830204261
 Camera:
   m_ObjectHideFlags: 0
@@ -11342,6 +11339,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3024751966921255785, guid: 1e0e11e043c0d424cb0a1383b442a692,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024751966921255785, guid: 1e0e11e043c0d424cb0a1383b442a692,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000039874838
+      objectReference: {fileID: 0}
     - target: {fileID: 3024751966921255790, guid: 1e0e11e043c0d424cb0a1383b442a692,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -11392,6 +11399,11 @@ PrefabInstance:
       propertyPath: interactRange
       value: 0.93
       objectReference: {fileID: 0}
+    - target: {fileID: 3638079275523188515, guid: 1e0e11e043c0d424cb0a1383b442a692,
+        type: 3}
+      propertyPath: personalTorch
+      value: 
+      objectReference: {fileID: 997102325}
     - target: {fileID: 3638079275523188515, guid: 1e0e11e043c0d424cb0a1383b442a692,
         type: 3}
       propertyPath: sequenceActive
